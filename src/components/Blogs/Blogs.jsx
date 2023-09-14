@@ -6,7 +6,6 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [bookmarks, setBookmarks] = useState([]);
   const [totalReadingTime, setTotalReadingTime] = useState(0);
-  const [imgSrc, setImgSrc] = useState("../../../images/bookmark.svg");
 
   useEffect(() => {
     fetch("blogs.json")
@@ -50,7 +49,6 @@ const Blogs = () => {
             blog={blog}
             handleBookmark={handleBookmark}
             handleMarkAsRead={handleMarkAsRead}
-            imgSrc={imgSrc}
           ></Blog>
         ))}
       </div>

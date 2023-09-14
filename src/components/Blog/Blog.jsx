@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
-const Blog = ({ blog, handleBookmark, handleMarkAsRead, imgSrc }) => {
+import bookmarkLogo from '../../assets/bookmark.svg';
+import bookmarkedLogo from '../../assets/bookmarked.svg';
+const Blog = ({ blog, handleBookmark, handleMarkAsRead}) => {
   const {
     cover,
     title,
@@ -8,7 +10,7 @@ const Blog = ({ blog, handleBookmark, handleMarkAsRead, imgSrc }) => {
     posted_date,
     reading_time,
     hash_tag,
-    isBookmarked
+    isBookmarked,
   } = blog;
 
   return (
@@ -40,7 +42,7 @@ const Blog = ({ blog, handleBookmark, handleMarkAsRead, imgSrc }) => {
             </p>
             <img
               className="w-[24px] cursor-pointer"
-              src={isBookmarked? '../../../images/bookmarked.svg' : imgSrc}
+              src={isBookmarked? bookmarkedLogo : bookmarkLogo}
               alt="Bookmark Icon"
               onClick={() => {
                 handleBookmark(blog);
